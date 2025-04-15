@@ -1,0 +1,37 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  const nameInput = document.querySelector("input[name='name']");
+  const emailInput = document.querySelector("input[name='email']");
+  const moduleInput = document.querySelector("input[name='module']");
+  const messageInput = document.querySelector("textarea");
+
+  // Change placeholder on focus
+  messageInput.addEventListener("focus", () => {
+    messageInput.placeholder = "Explain what you’re struggling with...";
+  });
+
+  // Handle form submission
+  form.addEventListener("submit", function (e) {
+    // Basic custom validation
+    if (
+      nameInput.value.trim().length < 2 ||
+      moduleInput.value.trim().length < 2 ||
+      messageInput.value.trim().length < 5
+    ) {
+      alert("Please fill out all fields properly.");
+      e.preventDefault(); // stop form submission
+      return;
+    }
+
+    // Show alert
+    alert("Your request has been submitted. Thank you!");
+
+    // Optional: Reset the form after a short delay
+    setTimeout(() => {
+      form.reset();
+      messageInput.placeholder = ""; // clear custom placeholder
+    }, 100);
+  });
+});
+
+
