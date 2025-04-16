@@ -1,11 +1,11 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: green;
   }
   
   form {
-    background: white;
+    background: gold;
     padding: 20px;
     border-radius: 10px;
     max-width: 400px;
